@@ -50,6 +50,7 @@ export default function App() {
           <Route path="/buyinternational/:id" element={<BuyInternational />} /> {/* Ruta para comprar un paquete internacional específico */}
           <Route path="/buynational/:id" element={<BuyNational />} /> {/* Ruta para comprar un paquete nacional específico */}
           <Route path="/buytours/:id" element={<BuyTours />} /> {/* Ruta para comprar un tour específico */}
+          <Route path="/buytours/:id" element={<BuyTours />} /> {/* Ruta para comprar un tour específico */}
 
         
         </Route>
