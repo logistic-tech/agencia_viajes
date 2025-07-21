@@ -1,0 +1,19 @@
+{
+  "title": "Nos encantaría saber de ti",
+  "formTitle": "Formulario de Contacto",
+  "fullName": "Nombre completo",
+  "email": "Correo electrónico",
+  "message": "Mensaje",
+  "sendMessage": "Enviar mensaje",
+  "successMessage": "¡Mensaje enviado con éxito!",
+  "errorMessage": "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+  "close": "Cerrar",
+  "infoTitle": "Información de Contacto",
+  "phoneTitle": "Números de Teléfono",
+  "whatsappTitle": "WhatsApp",
+  "emailTitle": "Correo Electrónico",
+  "addressTitle": "Dirección",
+  "address1": "Urbanización Perejil, Calle 3ra, Edificio PH Barcelona, Ciudad de Panamá",
+  "address2": "El Carmen, Calle A Sur, David, Chiriquí",
+  "followUs": "Síguenos en"
+}

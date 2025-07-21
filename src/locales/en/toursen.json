@@ -1,0 +1,25 @@
+{
+  "tours": [
+    {
+      "title": "Tropical Beach Adventure",
+      "description": "Enjoy a relaxing beach vacation with crystal-clear waters and sandy shores.",
+      "price": "$499"
+    },
+    {
+      "title": "Mountain Hiking Expedition",
+      "description": "Experience the thrill of hiking through rugged mountain trails with breathtaking views.",
+      "price": "$699"
+    },
+    {
+      "title": "Cultural City Tour",
+      "description": "Explore the rich history and vibrant culture of the city with guided tours and local experiences.",
+      "price": "$399"
+    },
+    {
+      "title": "Safari Adventure",
+      "description": "Embark on an exciting safari adventure and witness wildlife in their natural habitat.",
+      "price": "$899"
+    }
+  ],
+  "bookNow": "Book Now"
+}

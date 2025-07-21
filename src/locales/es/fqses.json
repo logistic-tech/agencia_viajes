@@ -1,0 +1,29 @@
+{
+  "title": "Preguntas Frecuentes",
+  "items": [
+    {
+      "q": "¿Qué destinos ofrecen para viajar?",
+      "a": "Ofrecemos una gran variedad de destinos nacionales e internacionales. Puedes explorar desde playas paradisíacas hasta ciudades históricas y aventuras en la naturaleza."
+    },
+    {
+      "q": "¿Cuáles son los paquetes de viaje más populares actualmente?",
+      "a": "Nuestros paquetes más populares incluyen destinos como las Islas Griegas, Machu Picchu en Perú y recorridos por las principales ciudades europeas como París y Roma."
+    },
+    {
+      "q": "¿Cómo puedo reservar un viaje con ustedes?",
+      "a": "Puedes reservar fácilmente tu viaje contactándonos por teléfono, correo electrónico o visitando nuestra oficina. Nuestros agentes estarán encantados de ayudarte a planificar y personalizar tu experiencia de viaje."
+    },
+    {
+      "q": "¿Qué documentación necesito para viajar a ciertos destinos?",
+      "a": "Los requisitos de documentación varían según el destino. Te proporcionaremos toda la información necesaria, incluyendo visas, pasaportes válidos y cualquier otra documentación requerida antes de tu viaje."
+    },
+    {
+      "q": "¿Cuáles son las políticas de cancelación y reembolso?",
+      "a": "Nuestras políticas de cancelación y reembolso varían según el tipo de paquete de viaje y las condiciones específicas del proveedor. Te daremos todos los detalles al momento de reservar para que tomes decisiones informadas."
+    },
+    {
+      "q": "¿Pueden personalizar un paquete de viaje según mis preferencias?",
+      "a": "Sí, ofrecemos servicios de personalización para adaptar tu viaje a tus preferencias individuales. Ya sea que desees ajustar fechas, agregar actividades específicas o elegir alojamientos particulares, estamos aquí para hacer que tu experiencia sea única e inolvidable."
+    }
+  ]
+}

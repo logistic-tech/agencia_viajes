@@ -5,6 +5,10 @@ import LayoutImg from '../components/LayoutImg';
 import CarruselCard from '../components/CarruselCard';
 import Layoutinfo from '../components/Layoutinfo';
 import ImgRoute from '../components/ImgRoute';
+import Search from '../components/Search';
+import { HiHeart, HiOutlineGlobeAlt, HiStar } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
+
 import img from '../assets/hungria.webp'; 
 import img1 from '../assets/paris.webp';
 import img2 from '../assets/china.webp';
@@ -24,8 +28,8 @@ import img15 from '../assets/panamavieja.webp';
 import img16 from '../assets/bocas.webp';
 
 export default function Home() {
+ const { t } = useTranslation('home');
 
-  // Cuadricula de paquetes internacionales
   const imgLayout = [
     { img: img1, title: 'Paris, France' },
     { img: img3, title: 'Brujas, Bélgica' },
@@ -36,69 +40,92 @@ export default function Home() {
     { img: img7, title: 'Doha, Qatar' },
     { img: img8, title: 'Seul, Corea del Sur' }
   ];
-  
-  // Carrusel de paquetes nacionales
-  const carruImg = [
-    { img: img9, title: 'Los Cangilones de Gualaca, Chiriqui' },
-    { img: img10, title: 'Cascada de Bermejo, Veraguas' },
-    { img: img11, title: 'Cascadas de Chorrillito, Veraguas' },
-    { img: img12, title: 'Isla Bastimentos, Bocas del Toro' },
-    { img: img13, title: 'Las Bovedas, Panama' },
-    { img: img14, title: 'San Blas, Guna Yala' },
-    { img: img15, title: 'Panama la Vieja, Panama' },
-    { img: img16, title: 'Bocas del Toro' }
-  ];
 
-  // Cards de tips y recomendaciones
   const infoLayout = [
-    { img: img9, title: 'Planning ahead', description: 'Be sure to plan your trip well in advance to get better prices and availability on flights, hotels and activities.' },
-    { img: img10, title: 'Necessary documentation', description: 'Check visa requirements and other documents needed to enter the country you will be visiting, and make sure you have everything in order before you leave.' },
-    { img: img11, title: 'Travel Insurance', description: 'Consider taking out travel insurance to protect you against unforeseen events such as cancellations, medical emergencies or lost luggage.' },
-    { img: img12, title: 'Budget and expenses', description: 'Set a clear budget for your trip and keep track of your expenses so you do not overspend.' }
+    { img: img9, title: t('home.tip1.title'), description: t('home.tip1.desc') },
+    { img: img10, title: t('home.tip2.title'), description: t('home.tip2.desc') },
+    { img: img11, title: t('home.tip3.title'), description: t('home.tip3.desc') },
+    { img: img12, title: t('home.tip4.title'), description: t('home.tip4.desc') }
   ];
 
   return (
     <Layout>
-      {/* Sección para mostrar una imagen de ruta con un enlace */}
-      <section className="relative overflow-hidden">
-        <ImgRoute
-          imageUrl={img} // Imagen de fondo.
-          title="Find the best packages with Logistic Travels & Tours" // Título sobre la imagen.
-          url="/packages" // Enlace al que redirige el botón.
-          buttonText='Search Packages...' // Texto del botón.
-          className="rounded-xl shadow-xl transition-transform duration-500 transform hover:scale-105"
-        />
+      {/* Hero Section */}
+      <section
+        className="relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${img1})` }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="relative z-10 text-center text-white px-4 max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+            {t('home.heroTitle')}
+          </h1>
+          <p className="text-lg md:text-xl mb-6">
+            {t('home.heroSubtitle')}
+          </p>
+          <a
+            href="/packages"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition duration-300"
+          >
+            {t('home.searchPackages')}
+          </a>
+        </div>
       </section>
 
-      {/* Sección para mostrar una serie de imágenes con un título */}
-      <section className="w-full mt-16 px-4 py-12 bg-gradient-to-r from-blue-50 to-blue-100">
+      {/* Search Bar */}
+      <section className="relative overflow-hidden px-4 md:px-8 lg:px-16 py-8 bg-white">
+        <Search />
+      </section>
+
+      {/* Cities */}
+      <section className="w-full px-4 md:px-8 lg:px-16 py-12 bg-gray-50">
         <LayoutImg 
-          data={imgLayout} // Datos de imágenes y títulos.
-          title="Discover the most beautiful cities in the world with us!" // Título para la sección de imágenes.
-          className="text-center"
+          data={imgLayout}
+          title={t('home.citiesTitle')}
+          className="text-center text-lg"
         />
       </section>
 
-      {/* Sección para mostrar un carrusel de imágenes */}
-      <section className="mb-12 px-4 py-12 bg-white shadow-lg rounded-xl">
-        <CarruselCard 
-          data={carruImg} // Datos del carrusel.
-          title="Discover the most beautiful places of our country PANAMA with us!" // Título para el carrusel.
-        />
+      {/* Why travel with us */}
+      <section className="px-4 md:px-8 lg:px-16 py-16 bg-gradient-to-b from-orange-50 to-white rounded-xl shadow-xl text-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-orange-600 mb-6">
+          {t('home.whyTravelTitle')}
+        </h2>
+        <p className="text-gray-700 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12">
+          {t('home.whyTravelDescription')}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <HiHeart className="text-orange-500 w-12 h-12 mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('home.card1.title')}</h3>
+            <p className="text-gray-600 text-sm text-center">{t('home.card1.desc')}</p>
+          </div>
+          <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <HiOutlineGlobeAlt className="text-orange-500 w-12 h-12 mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('home.card2.title')}</h3>
+            <p className="text-gray-600 text-sm text-center">{t('home.card2.desc')}</p>
+          </div>
+          <div className="flex flex-col items-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300">
+            <HiStar className="text-orange-500 w-12 h-12 mb-4" />
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">{t('home.card3.title')}</h3>
+            <p className="text-gray-600 text-sm text-center">{t('home.card3.desc')}</p>
+          </div>
+        </div>
       </section>
 
-      {/* Sección para mostrar consejos y recomendaciones de viaje */}
-      <section className="px-4 py-12 bg-gradient-to-r from-teal-100 to-teal-200">
+      {/* Travel Tips */}
+      <section className="px-4 md:px-8 lg:px-16 py-12 bg-gray-100">
         <Layoutinfo 
-          title="Travel Tips and Recommendations" // Título de la sección de consejos.
-          data={infoLayout} // Datos de consejos y recomendaciones.
+          title={t('home.travelTipsTitle')}
+          data={infoLayout}
           className="text-center"
         />
       </section>
 
-      {/* Sección para mostrar preguntas frecuentes */}
-      <section className="px-4 py-12">
-        <Fqs /> {/* Componente para mostrar preguntas frecuentes. */}
+      {/* FAQ */}
+      <section className="px-4 md:px-8 lg:px-16 py-12 bg-white">
+        <Fqs />
       </section>
     </Layout>
   );

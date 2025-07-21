@@ -1,25 +1,27 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Layout from '../layout/Layout';
 import { Link } from 'react-router-dom';
-import img1 from '../../assets/paris.webp'; // International tickets
+import img1 from '../../assets/paris.webp';
 import img2 from '../../assets/china.webp';
 import img3 from '../../assets/belgica.webp';
 import img4 from '../../assets/brasil.webp';
-import img5 from '../../assets/colombia.webp'; 
+import img5 from '../../assets/colombia.webp';
 import img6 from '../../assets/vietnam.webp';
 import img7 from '../../assets/qatar.webp';
 import img8 from '../../assets/surcorea.webp';
-import img9 from '../../assets/cangilonesGualaca.webp'; // National tickets
+import img9 from '../../assets/cangilonesGualaca.webp';
 import img10 from '../../assets/cascadabermejo.webp';
 import img11 from '../../assets/cascadaschorrillito.webp';
 import img12 from '../../assets/islabastimentos.webp';
-import img13 from '../../assets/bovedas.webp'; 
+import img13 from '../../assets/bovedas.webp';
 import img14 from '../../assets/sanblas.webp';
 import img15 from '../../assets/panamavieja.webp';
 import img16 from '../../assets/bocas.webp';
 
 export default function Tickets() {
-  // International tickets
+  const { t } = useTranslation('tickets');
+
   const imgLayoutInternational = [
     { img: img1, title: 'Paris, France', price: '$1,200' },
     { img: img2, title: 'Beijing, China', price: '$900' },
@@ -31,7 +33,6 @@ export default function Tickets() {
     { img: img8, title: 'Seoul, South Korea', price: '$1,000' }
   ];
 
-  // National tickets
   const imgLayoutNational = [
     { img: img9, title: 'Los Cangilones de Gualaca, Chiriquí', price: '$30' },
     { img: img10, title: 'Cascada de Bermejo, Veraguas', price: '$25' },
@@ -45,62 +46,68 @@ export default function Tickets() {
 
   return (
     <Layout>
-      {/* International Section with gradient from top to bottom */}
-      <section className="py-20 bg-gradient-to-b from-indigo-600 to-transparent text-white">
+      {/* International Section */}
+      <section className="py-20 bg-white text-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-semibold mb-6">Discover the Best International Tickets</h1>
-          <p className="text-lg mb-10">Get ready for the adventure of a lifetime with our exclusive international travel tickets.</p>
-          
-          {/* International Tickets Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <h1 className="text-4xl font-extrabold mb-3">{t('internationalTitle')}</h1>
+          <p className="text-lg text-gray-600 mb-12">{t('internationalDescription')}</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {imgLayoutInternational.map((ticket, index) => (
-              <div key={index} className="relative overflow-hidden rounded-lg shadow-xl transition duration-500 transform hover:scale-105">
-                <img src={ticket.img} alt={ticket.title} className="w-full h-64 object-cover rounded-lg"/>
-                <div className="absolute inset-0 bg-black opacity-30 rounded-lg"></div>
-                <div className="absolute bottom-0 left-0 p-6 text-center z-10">
-                  <h2 className="text-2xl font-semibold">{ticket.title}</h2>
-                  <p className="text-lg font-light">{ticket.price}</p>
-                  <Link to="/internationalpackages" className="mt-4 inline-block px-6 py-3 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-white hover:text-black transition">
-                    Book Now
+              <div key={index} className="rounded-xl overflow-hidden shadow-lg bg-white transition duration-300 hover:shadow-2xl">
+                <img src={ticket.img} alt={ticket.title} className="w-full h-56 object-cover" />
+                <div className="p-6 text-left">
+                  <h2 className="text-xl font-semibold mb-1">{ticket.title}</h2>
+                  <p className="text-gray-500 mb-4">{ticket.price}</p>
+                  <Link
+                    to="/internationalpackages"
+                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium transition"
+                  >
+                    {t('bookNow')}
                   </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* "See More" Button */}
-          <Link to="/internationalpackages" className="mt-8 inline-block bg-transparent border-2 border-blue-800 text-blue-900 py-3 px-6 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition">
-            See More International Tickets
+          <Link
+            to="/internationalpackages"
+            className="mt-12 inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-base font-semibold transition"
+          >
+            {t('seeMoreInternational')}
           </Link>
         </div>
       </section>
 
-      {/* National Section with gradient from bottom to top */}
-      <section className="py-20 bg-gradient-to-b from-indigo-600 to-transparent text-white">
+      {/* National Section */}
+      <section className="py-20 bg-gray-50 text-gray-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-semibold mb-6">Discover the Best National Tickets</h1>
-          <p className="text-lg mb-10">Explore the beauty of your own country with our handpicked national tours and tickets.</p>
-          
-          {/* National Tickets Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          <h1 className="text-4xl font-extrabold mb-3">{t('nationalTitle')}</h1>
+          <p className="text-lg text-gray-600 mb-12">{t('nationalDescription')}</p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {imgLayoutNational.map((ticket, index) => (
-              <div key={index} className="relative overflow-hidden rounded-lg shadow-xl transition duration-500 transform hover:scale-105">
-                <img src={ticket.img} alt={ticket.title} className="w-full h-64 object-cover rounded-lg"/>
-                <div className="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
-                <div className="absolute bottom-0 left-0 p-6 text-center z-10">
-                  <h2 className="text-2xl font-semibold">{ticket.title}</h2>
-                  <p className="text-lg font-light">{ticket.price}</p>
-                  <Link to="/nationalpackages" className="mt-4 inline-block px-6 py-3 bg-transparent border-2 border-white text-white rounded-full text-lg font-semibold hover:bg-black hover:text-white transition">
-                    Book Now
+              <div key={index} className="rounded-xl overflow-hidden shadow-lg bg-white transition duration-300 hover:shadow-2xl">
+                <img src={ticket.img} alt={ticket.title} className="w-full h-56 object-cover" />
+                <div className="p-6 text-left">
+                  <h2 className="text-xl font-semibold mb-1">{ticket.title}</h2>
+                  <p className="text-gray-500 mb-4">{ticket.price}</p>
+                  <Link
+                    to="/nationalpackages"
+                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium transition"
+                  >
+                    {t('bookNow')}
                   </Link>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* "See More" Button */}
-          <Link to="/nationalpackages" className="mt-8 inline-block bg-transparent border-2 border-blue-800 text-blue-900 py-3 px-6 rounded-full text-lg font-semibold hover:bg-black hover:text-white transition">
-            See More National Tickets
+          <Link
+            to="/nationalpackages"
+            className="mt-12 inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-base font-semibold transition"
+          >
+            {t('seeMoreNational')}
           </Link>
         </div>
       </section>

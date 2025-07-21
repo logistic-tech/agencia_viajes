@@ -1,0 +1,39 @@
+{
+  "home": {
+    "heroTitle": "Encuentra los mejores paquetes con Logistic Travels & Tours",
+    "heroSubtitle": "Descubre tu próximo destino inolvidable",
+    "searchPackages": "Buscar paquetes...",
+    "citiesTitle": "¡Descubre las ciudades más hermosas del mundo con nosotros!",
+    "whyTravelTitle": "¿Por qué viajar con Logistic Travels & Tours?",
+    "whyTravelDescription": "En Logistic Travels & Tours no solo ofrecemos viajes: creamos experiencias inolvidables, construimos recuerdos duraderos y te ayudamos a explorar el mundo con confianza y alegría.",
+    "card1": {
+      "title": "Servicio Personalizado",
+      "desc": "Escuchamos tus deseos y adaptamos cada viaje con cuidado, pasión y dedicación."
+    },
+    "card2": {
+      "title": "Destinos Globales",
+      "desc": "Desde joyas ocultas hasta ciudades icónicas, te llevamos donde tu corazón quiera ir."
+    },
+    "card3": {
+      "title": "Momentos Memorables",
+      "desc": "Creamos experiencias extraordinarias que se quedan contigo mucho después de volver a casa."
+    },
+    "travelTipsTitle": "Consejos y Recomendaciones de Viaje",
+    "tip1": {
+      "title": "Planificación anticipada",
+      "desc": "Asegúrate de planificar tu viaje con anticipación para obtener mejores precios y disponibilidad en vuelos, hoteles y actividades."
+    },
+    "tip2": {
+      "title": "Documentación necesaria",
+      "desc": "Verifica los requisitos de visa y otros documentos necesarios para ingresar al país que vas a visitar, y asegúrate de tener todo en orden antes de salir."
+    },
+    "tip3": {
+      "title": "Seguro de viaje",
+      "desc": "Considera contratar un seguro de viaje que te proteja ante imprevistos como cancelaciones, emergencias médicas o pérdida de equipaje."
+    },
+    "tip4": {
+      "title": "Presupuesto y gastos",
+      "desc": "Establece un presupuesto claro para tu viaje y haz un seguimiento de tus gastos para no excederte."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "We'd Love to Hear From You",
+  "formTitle": "Contact Form",
+  "fullName": "Full Name",
+  "email": "Email",
+  "message": "Message",
+  "sendMessage": "Send Message",
+  "successMessage": "Message sent successfully!",
+  "errorMessage": "Failed to send message. Please try again.",
+  "close": "Close",
+  "infoTitle": "Contact Information",
+  "phoneTitle": "Phone Numbers",
+  "whatsappTitle": "WhatsApp",
+  "emailTitle": "Email",
+  "addressTitle": "Address",
+  "address1": "Perejil Urb., 3rd Street, PH Barcelona building, Panama City",
+  "address2": "El Carmen, Calle A Sur, David, Chiriquí",
+  "followUs": "Follow Us On"
+}

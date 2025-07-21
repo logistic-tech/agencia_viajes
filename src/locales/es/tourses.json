@@ -1,0 +1,25 @@
+{
+  "tours": [
+    {
+      "title": "Aventura en Playa Tropical",
+      "description": "Disfruta de unas vacaciones relajantes en la playa con aguas cristalinas y arena blanca.",
+      "price": "$499"
+    },
+    {
+      "title": "Expedición de Senderismo en Montaña",
+      "description": "Vive la emoción de caminar por senderos montañosos con vistas impresionantes.",
+      "price": "$699"
+    },
+    {
+      "title": "Tour Cultural por la Ciudad",
+      "description": "Explora la rica historia y vibrante cultura de la ciudad con tours guiados y experiencias locales.",
+      "price": "$399"
+    },
+    {
+      "title": "Aventura en Safari",
+      "description": "Emprende una emocionante aventura en safari y observa la vida salvaje en su hábitat natural.",
+      "price": "$899"
+    }
+  ],
+  "bookNow": "Reservar ahora"
+}

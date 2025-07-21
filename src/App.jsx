@@ -21,7 +21,7 @@ import BuyInternational from './page/subpages/BuyInternational'; // Importa el c
 import PaymentOption from './page/subpages/PaymentOption';
 import InvoiceView from './page/subpages/InvoiceView';
 import ProfileAdmin from './page/subpages/ProfileAdmin';
-
+import '../i18n.js';
 export default function App() {
   return (
     <Router> {/* Configura el enrutador para la aplicación */}

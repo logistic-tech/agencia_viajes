@@ -1,0 +1,39 @@
+{
+  "home": {
+    "heroTitle": "Find the best packages with Logistic Travels & Tours",
+    "heroSubtitle": "Discover your next unforgettable destination",
+    "searchPackages": "Search Packages...",
+    "citiesTitle": "Discover the most beautiful cities in the world with us!",
+    "whyTravelTitle": "Why Travel with Logistic Travels & Tours?",
+    "whyTravelDescription": "At Logistic Travels & Tours, we don't just offer trips — we craft unforgettable experiences, create lasting memories, and help you explore the world with confidence and joy.",
+    "card1": {
+      "title": "Personalized Service",
+      "desc": "We listen to your desires and tailor each trip with care, passion, and dedication."
+    },
+    "card2": {
+      "title": "Global Destinations",
+      "desc": "From hidden gems to iconic cities, we take you where your heart wants to go."
+    },
+    "card3": {
+      "title": "Memorable Moments",
+      "desc": "We create extraordinary experiences that stay with you long after you return home."
+    },
+    "travelTipsTitle": "Travel Tips and Recommendations",
+    "tip1": {
+      "title": "Planning ahead",
+      "desc": "Be sure to plan your trip well in advance to get better prices and availability on flights, hotels and activities."
+    },
+    "tip2": {
+      "title": "Necessary documentation",
+      "desc": "Check visa requirements and other documents needed to enter the country you will be visiting, and make sure you have everything in order before you leave."
+    },
+    "tip3": {
+      "title": "Travel Insurance",
+      "desc": "Consider taking out travel insurance to protect you against unforeseen events such as cancellations, medical emergencies or lost luggage."
+    },
+    "tip4": {
+      "title": "Budget and expenses",
+      "desc": "Set a clear budget for your trip and keep track of your expenses so you do not overspend."
+    }
+  }
+}
