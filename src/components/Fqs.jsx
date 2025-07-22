@@ -8,7 +8,7 @@ export default function Fqs() {
 
   return (
     <section className='w-full max-w-6xl mx-auto px-4 py-8'>
-      <h1 className='text-xl md:text-2xl font-bold text-center mb-6 text-gray-800'>
+      {/* <h1 className='text-xl md:text-2xl font-bold text-center mb-6 text-gray-800'>
         {t('title')}
       </h1>
 
@@ -31,7 +31,7 @@ export default function Fqs() {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </section>
   );
 }

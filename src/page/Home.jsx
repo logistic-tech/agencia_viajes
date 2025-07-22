@@ -1,15 +1,10 @@
-import React from 'react';
 import Layout from './layout/Layout';
 import Fqs from '../components/Fqs';
 import LayoutImg from '../components/LayoutImg';
-import CarruselCard from '../components/CarruselCard';
 import Layoutinfo from '../components/Layoutinfo';
-import ImgRoute from '../components/ImgRoute';
 import Search from '../components/Search';
 import { HiHeart, HiOutlineGlobeAlt, HiStar } from 'react-icons/hi';
 import { useTranslation } from 'react-i18next';
-
-import img from '../assets/hungria.webp'; 
 import img1 from '../assets/paris.webp';
 import img2 from '../assets/china.webp';
 import img3 from '../assets/belgica.webp';
@@ -22,10 +17,7 @@ import img9 from '../assets/cangilonesGualaca.webp';
 import img10 from '../assets/cascadabermejo.webp';
 import img11 from '../assets/cascadaschorrillito.webp';
 import img12 from '../assets/islabastimentos.webp';
-import img13 from '../assets/bovedas.webp'; 
-import img14 from '../assets/sanblas.webp';
-import img15 from '../assets/panamavieja.webp';
-import img16 from '../assets/bocas.webp';
+
 
 export default function Home() {
  const { t } = useTranslation('home');
@@ -47,7 +39,6 @@ export default function Home() {
     { img: img11, title: t('home.tip3.title'), description: t('home.tip3.desc') },
     { img: img12, title: t('home.tip4.title'), description: t('home.tip4.desc') }
   ];
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -55,7 +46,7 @@ export default function Home() {
         className="relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${img1})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             {t('home.heroTitle')}
@@ -73,7 +64,7 @@ export default function Home() {
       </section>
 
       {/* Search Bar */}
-      <section className="relative overflow-hidden px-4 md:px-8 lg:px-16 py-8 bg-white">
+      <section className="relative  px-4 md:px-8 lg:px-16 py-8 bg-white">
         <Search />
       </section>
 
