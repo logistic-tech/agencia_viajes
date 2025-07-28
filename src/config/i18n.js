@@ -4,26 +4,26 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Traducciones generales (navegación, login, etc.)
-import translationEN from './src/locales/en/translationen.json';
-import translationES from './src/locales/es/translationes.json';
+import translationEN from '../locales/en/translationen.json';
+import translationES from '../locales/es/translationes.json';
 //Traducciones generales para Tickets
-import ticketsEN from './src/locales/en/ticketsen.json';
-import ticketsES from './src/locales/es/ticketses.json';
+import ticketsEN from '../locales/en/ticketsen.json';
+import ticketsES from '../locales/es/ticketses.json';
 // Traducciones específicas para la página About Us
-import aboutEN from './src/locales/en/abouten.json';
-import aboutES from './src/locales/es/aboutes.json';
+import aboutEN from '../locales/en/abouten.json';
+import aboutES from '../locales/es/aboutes.json';
 // Traducciones específicas para la página Tours
-import toursEN from './src/locales/en/toursen.json';
-import toursES from './src/locales/es/tourses.json';
+import toursEN from '../locales/en/toursen.json';
+import toursES from '../locales/es/tourses.json';
 
-import contactEN from './src/locales/en/contacten.json';
-import contactES from './src/locales/es/contactes.json';
+import contactEN from '../locales/en/contacten.json';
+import contactES from '../locales/es/contactes.json';
 
-import homeEN from './src/locales/en/homeen.json';
-import homeES from './src/locales/es/homees.json';
+import homeEN from '../locales/en/homeen.json';
+import homeES from '../locales/es/homees.json';
 
-import faqsEN from './src/locales/en/fqsen.json';
-import faqsES from './src/locales/es/fqses.json';
+import faqsEN from '../locales/en/fqsen.json';
+import faqsES from '../locales/es/fqses.json';
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)

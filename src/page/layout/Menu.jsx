@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Dropdown } from 'flowbite-react';
+import { Dropdown } from "flowbite-react";
 import {
   FaHome, FaPlane, FaBriefcase, FaUser, FaUsers,
   FaAddressBook, FaSignOutAlt, FaBars, FaTimes
@@ -25,7 +25,7 @@ export default function Menu() {
 
   const handleLanguageChange = (lang) => {
     setLanguage(lang);
-    i18n.changeLanguage(lang); // ✅ Cambiar idioma en i18next
+    i18n.changeLanguage(lang); 
   };
 
   return (
@@ -56,8 +56,8 @@ export default function Menu() {
             label={<span className="text-white font-medium">🌐 {language.toUpperCase()}</span>}
             inline
           >
-            <Dropdown.Item onClick={() => handleLanguageChange('en')}>🇺🇸 English</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleLanguageChange('es')}>🇪🇸 Español</Dropdown.Item>
+            <DropdownItem onClick={() => handleLanguageChange('en')}>🇺🇸 English</DropdownItem>
+            <DropdownItem onClick={() => handleLanguageChange('es')}>🇪🇸 Español</DropdownItem>
           </Dropdown>
 
           <Dropdown

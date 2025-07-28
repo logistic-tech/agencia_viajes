@@ -1,10 +1,17 @@
-import React from 'react'; // Importa el módulo React para usar JSX y otras funcionalidades de React.
-import ReactDOM from 'react-dom/client'; // Importa el método `createRoot` del módulo `react-dom/client` para renderizar el árbol de componentes React en el DOM.
-import './index.css'; // Importa el archivo de estilos globales para aplicar estilos a la aplicación.
-import App from './App.jsx'; // Importa el componente principal de la aplicación.
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './config/i18n.js';
+import App from './App.jsx';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <I18nextProvider i18n={i18n}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </I18nextProvider>
   </React.StrictMode>
 );
