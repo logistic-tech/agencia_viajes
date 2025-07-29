@@ -36,7 +36,7 @@ export default function ContactUs() {
   };
 
   return (
-    <Layout>
+    <section>
       <section className="container mx-auto px-6 py-12">
         <section className="bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 p-8 rounded-3xl shadow-xl mb-12">
           <h2 className="text-3xl font-bold text-center text-white mb-8">{t('title')}</h2>
@@ -153,6 +153,6 @@ export default function ContactUs() {
           </div>
         </section>
       </section>
-    </Layout>
+    </section>
   );
 }

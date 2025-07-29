@@ -55,7 +55,7 @@ export default function InternationalDetails() {
 
     return (
         // Envuelve el contenido en el componente Layout.
-        <Layout>
+        <section>
             <div className="container mx-auto p-4">
                 {/* Botón para volver a la página de paquetes nacionales. */}
                 <ButtonIcon
@@ -130,6 +130,6 @@ export default function InternationalDetails() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </section>
     );
 }

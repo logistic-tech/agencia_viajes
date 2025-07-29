@@ -74,7 +74,7 @@ export default function InvoiceView() {
     : null;
 
   return (
-    <Layout>
+    <section>
       <div className="min-h-screen p-6 max-w-3xl mx-auto bg-white shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-4 text-center">Invoice Summary</h1>
 
@@ -108,6 +108,6 @@ export default function InvoiceView() {
           Back to Tours
         </button>
       </div>
-    </Layout>
+    </section>
   );
 }

@@ -25,7 +25,7 @@ export default function NationalPackages() {
   };
 
   return (
-    <Layout>
+    <section>
       {/* Contenedor para el carrusel de imágenes */}
       <div className="w-screen">
         {/* Contenedor del carrusel */}
@@ -88,6 +88,6 @@ export default function NationalPackages() {
           ))}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 }

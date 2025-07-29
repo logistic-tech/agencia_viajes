@@ -10,7 +10,7 @@ export default function AboutUs() {
   const { t } = useTranslation('about');
 
   return (
-    <Layout>
+    <section>
       <div className="container mx-auto px-6 py-16 space-y-24">
 
         {/* Sección de introducción */}
@@ -108,6 +108,6 @@ export default function AboutUs() {
         </div>
 
       </div>
-    </Layout>
+    </section>
   );
 }

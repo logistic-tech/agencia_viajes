@@ -52,7 +52,7 @@ export default function NationalDetails() {
     };
 
     return (
-        <Layout>
+        <section>
             <div className="container mx-auto p-4">
                 {/* Botón para volver a la página de paquetes nacionales */}
                 <ButtonIcon
@@ -128,6 +128,6 @@ export default function NationalDetails() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </section>
     );
 }
