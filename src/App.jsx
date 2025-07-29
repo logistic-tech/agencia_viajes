@@ -22,6 +22,8 @@ import PaymentOption from './page/subpages/PaymentOption';
 import InvoiceView from './page/subpages/InvoiceView';
 import ProfileAdmin from './page/subpages/ProfileAdmin';
 import Layout from './page/layout/Layout';
+import Paquetes from './page/settings/paquetes/Paquetes'
+import AddPaquetes from './page/settings/paquetes/AddPaquetes'
 
 export default function App() {
   return (
@@ -43,6 +45,9 @@ export default function App() {
         <Route path="/international/:id" element={<InternationalDetails />} />
         <Route path="/payment-option/:purchaseId" element={<PaymentOption />} />
         <Route path="/invoice/:purchaseId" element={<InvoiceView />} />
+        <Route path="/setting/paquete" element={<Paquetes />} />
+   <Route path="/setting/paquetes/nuevo" element={<AddPaquetes />} />
+    <Route path="/setting/paquetes/editar/:id" element={<AddPaquetes />} />   
         <Route path="/admin" element={<ProfileAdmin />} />
 
         {/* Rutas protegidas */}
@@ -51,6 +56,7 @@ export default function App() {
           <Route path="/buyinternational/:id" element={<BuyInternational />} />
           <Route path="/buynational/:id" element={<BuyNational />} />
           <Route path="/buytours/:id" element={<BuyTours />} />
+          
         </Route>
       </Route>
     </Routes>

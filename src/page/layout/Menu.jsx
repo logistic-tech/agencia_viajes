@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Dropdown } from "flowbite-react";
+import { Dropdown,DropdownItem,DropdownHeader } from "flowbite-react";
 import {
   FaHome, FaPlane, FaBriefcase, FaUser, FaUsers,
   FaAddressBook, FaSignOutAlt, FaBars, FaTimes
@@ -74,32 +74,32 @@ export default function Menu() {
               </div>
             }
           >
-            <Dropdown.Header>
+            <DropdownHeader>
               <div className="text-center">
                 <p className="text-sm font-semibold text-gray-900">
                   {user?.displayName || 'Invitado'}
                 </p>
                 <p className="text-xs text-gray-500">{user?.email || 'No autenticado'}</p>
               </div>
-            </Dropdown.Header>
+            </DropdownHeader>
 
             {user ? (
               <>
-                <Dropdown.Item onClick={handleNavigation} className="text-black hover:bg-blue-100">
+                <DropdownItem onClick={handleNavigation} className="text-black hover:bg-blue-100">
                   {t('profile')}
-                </Dropdown.Item>
-                <Dropdown.Item onClick={handleLogout} className="text-black hover:bg-blue-100">
+                </DropdownItem>
+                <DropdownItem onClick={handleLogout} className="text-black hover:bg-blue-100">
                   {t('logout')}
-                </Dropdown.Item>
+                </DropdownItem>
               </>
             ) : (
               <>
-                <Dropdown.Item className="text-black hover:bg-blue-100">
+                <DropdownItem className="text-black hover:bg-blue-100">
                   <Link to="/login" className="block w-full">{t('login')}</Link>
-                </Dropdown.Item>
-                <Dropdown.Item className="text-black hover:bg-blue-100">
+                </DropdownItem>
+                <DropdownItem className="text-black hover:bg-blue-100">
                   <Link to="/register" className="block w-full font-semibold text-blue-700">Crear cuenta</Link>
-                </Dropdown.Item>
+                </DropdownItem>
               </>
             )}
           </Dropdown>
