@@ -1,5 +1,29 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
+
+export const subirImagen = async (file, uidPaquete) => {
+  const formData = new FormData();
+  formData.append('image', file);
+  formData.append('folder', 'paquetes');
+
+  const extension = file.name.split('.').pop();
+  const renamedFile = new File([file], `${uidPaquete}.${extension}`, { type: file.type });
+
+  formData.set('image', renamedFile);
+
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/api/images/upload`, {
+    method: 'POST',
+    body: formData,
+  });
+
+  if (!response.ok) {
+    throw new Error('Error al subir la imagen');
+  }
+
+  const data = await response.json();
+  return data.url; // URL pública de Firebase Storage
+};
+
 export const obtenerDestinos = async () => {
   try {
     const response = await fetch(`${BASE_URL}/api/destinos`);
@@ -70,23 +94,6 @@ export const obtenerPaquetePorId = async (id) => {
     return await response.json();
   } catch (error) {
     console.error('Error al obtener paquete por ID:', error);
-    throw error;
-  }
-};
-
-export const subirImagen = async (file) => {
-  try {
-    const formData = new FormData();
-    formData.append('imagen', file);
-
-    const response = await fetch(`${BASE_URL}/api/imagenes`, {
-      method: 'POST',
-      body: formData,
-    });
-    if (!response.ok) throw new Error('No se pudo subir la imagen');
-    return await response.json(); // Se espera { url: '...' }
-  } catch (error) {
-    console.error('Error al subir imagen:', error);
     throw error;
   }
 };

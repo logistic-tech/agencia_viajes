@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/Home';
 import AboutUs from './page/subpages/AboutUs';
@@ -29,7 +28,6 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/* Rutas públicas */}
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -46,17 +44,14 @@ export default function App() {
         <Route path="/payment-option/:purchaseId" element={<PaymentOption />} />
         <Route path="/invoice/:purchaseId" element={<InvoiceView />} />
         <Route path="/setting/paquete" element={<Paquetes />} />
-   <Route path="/setting/paquetes/nuevo" element={<AddPaquetes />} />
-    <Route path="/setting/paquetes/editar/:id" element={<AddPaquetes />} />   
+        <Route path="/setting/paquetes/nuevo" element={<AddPaquetes />} />
+        <Route path="/setting/paquetes/editar/:id" element={<AddPaquetes />} />   
         <Route path="/admin" element={<ProfileAdmin />} />
-
-        {/* Rutas protegidas */}
         <Route element={<ProtectedRoutes />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/buyinternational/:id" element={<BuyInternational />} />
           <Route path="/buynational/:id" element={<BuyNational />} />
-          <Route path="/buytours/:id" element={<BuyTours />} />
-          
+          <Route path="/buytours/:id" element={<BuyTours />} />  
         </Route>
       </Route>
     </Routes>

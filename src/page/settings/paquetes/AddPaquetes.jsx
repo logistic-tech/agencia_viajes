@@ -1,10 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Button } from 'flowbite-react';
-import { crearPaquete, actualizarPaquete, subirImagen, obtenerPaquetePorId, obtenerDestinos } from '../../../services/services';
+import {
+  crearPaquete,
+  actualizarPaquete,
+  subirImagen,
+  obtenerPaquetePorId,
+  obtenerDestinos
+} from '../../../services/services';
 
 export default function AddPaquetes() {
-  const { id } = useParams(); // Si existe, estamos editando
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -18,11 +24,10 @@ export default function AddPaquetes() {
     precio: '',
     cupos_disponibles: '',
     incluye: '',
-    destinoRef: '', // id del destino seleccionado
+    destinoRef: '',
     imagen_url: '',
   });
 
-  // Carga destinos para el select
   useEffect(() => {
     const fetchDestinos = async () => {
       const data = await obtenerDestinos();
@@ -31,7 +36,6 @@ export default function AddPaquetes() {
     fetchDestinos();
   }, []);
 
-  // Si estamos editando, cargar datos
   useEffect(() => {
     if (id) {
       const fetchPaquete = async () => {
@@ -55,174 +59,174 @@ export default function AddPaquetes() {
     }
   }, [id]);
 
-  // Maneja cambio de inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  // Maneja subida y preview de imagen
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    // Preview local
-    setPreview(URL.createObjectURL(file));
-
-    // Subir imagen y guardar url en form
-    subirImagen(file).then(url => {
-      setForm(prev => ({ ...prev, imagen_url: url }));
-    }).catch(() => {
-      alert('Error subiendo la imagen');
-    });
-  };
-
-  // Guardar paquete (crear o actualizar)
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Validación simple
-    if (!form.nombre || !form.destinoRef || !form.fecha_inicio || !form.fecha_fin) {
-      alert('Por favor completa los campos obligatorios');
+    if (!id) {
+      alert('Primero guarda el paquete para subir la imagen');
       return;
     }
 
-    setLoading(true);
+    setPreview(URL.createObjectURL(file));
 
-    try {
-      if (id) {
-        await actualizarPaquete(id, form);
-        alert('Paquete actualizado correctamente');
-      } else {
-        await crearPaquete(form);
-        alert('Paquete creado correctamente');
+    subirImagen(file, id)
+      .then((url) => {
+        setForm((prev) => ({ ...prev, imagen_url: url }));
+      })
+      .catch(() => {
+        alert('Error subiendo la imagen');
+      });
+  };
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+
+      if (!form.nombre || !form.destinoRef || !form.fecha_inicio || !form.fecha_fin) {
+        alert('Por favor completa los campos obligatorios');
+        return;
       }
-      navigate('/paquetes');
-    } catch (error) {
-      alert('Error guardando el paquete');
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
+
+      setLoading(true);
+      try {
+        if (id) {
+          await actualizarPaquete(id, form);
+          alert('Paquete actualizado correctamente');
+        } else {
+          await crearPaquete(form);
+          alert('Paquete creado correctamente');
+        }
+        navigate('/setting/paquete');
+      } catch (error) {
+        console.error(error);
+        alert('Error guardando el paquete');
+      } finally {
+        setLoading(false);
+      }
   };
 
   return (
-    <section className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">{id ? 'Editar Paquete' : 'Crear Paquete'}</h1>
+    <section className="max-w-4xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">{id ? 'Editar Paquete' : 'Crear Paquete'}</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-6">
         <div>
-          <label className="block font-medium mb-1" htmlFor="nombre">Nombre *</label>
+          <label htmlFor="nombre" className="block mb-1 font-semibold">Nombre *</label>
           <input
+            type="text"
             id="nombre"
             name="nombre"
-            type="text"
-            className="w-full border border-gray-300 rounded p-2"
             value={form.nombre}
             onChange={handleChange}
             required
+            className="w-full rounded border border-gray-300 p-2"
           />
         </div>
 
         <div>
-          <label className="block font-medium mb-1" htmlFor="descripcion">Descripción</label>
+          <label htmlFor="descripcion" className="block mb-1 font-semibold">Descripción</label>
           <textarea
             id="descripcion"
             name="descripcion"
-            className="w-full border border-gray-300 rounded p-2"
             value={form.descripcion}
             onChange={handleChange}
+            className="w-full rounded border border-gray-300 p-2"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block font-medium mb-1" htmlFor="fecha_inicio">Fecha Inicio *</label>
+            <label htmlFor="fecha_inicio" className="block mb-1 font-semibold">Fecha Inicio *</label>
             <input
+              type="date"
               id="fecha_inicio"
               name="fecha_inicio"
-              type="date"
-              className="w-full border border-gray-300 rounded p-2"
               value={form.fecha_inicio}
               onChange={handleChange}
               required
+              className="w-full rounded border border-gray-300 p-2"
             />
           </div>
           <div>
-            <label className="block font-medium mb-1" htmlFor="fecha_fin">Fecha Fin *</label>
+            <label htmlFor="fecha_fin" className="block mb-1 font-semibold">Fecha Fin *</label>
             <input
+              type="date"
               id="fecha_fin"
               name="fecha_fin"
-              type="date"
-              className="w-full border border-gray-300 rounded p-2"
               value={form.fecha_fin}
               onChange={handleChange}
               required
+              className="w-full rounded border border-gray-300 p-2"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="precio" className="block mb-1 font-semibold">Precio *</label>
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              value={form.precio}
+              onChange={handleChange}
+              required
+              className="w-full rounded border border-gray-300 p-2"
+            />
+          </div>
+          <div>
+            <label htmlFor="cupos_disponibles" className="block mb-1 font-semibold">Cupos disponibles</label>
+            <input
+              type="number"
+              id="cupos_disponibles"
+              name="cupos_disponibles"
+              value={form.cupos_disponibles}
+              onChange={handleChange}
+              className="w-full rounded border border-gray-300 p-2"
             />
           </div>
         </div>
 
         <div>
-          <label className="block font-medium mb-1" htmlFor="precio">Precio *</label>
-          <input
-            id="precio"
-            name="precio"
-            type="number"
-            min="0"
-            className="w-full border border-gray-300 rounded p-2"
-            value={form.precio}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block font-medium mb-1" htmlFor="cupos_disponibles">Cupos disponibles</label>
-          <input
-            id="cupos_disponibles"
-            name="cupos_disponibles"
-            type="number"
-            min="0"
-            className="w-full border border-gray-300 rounded p-2"
-            value={form.cupos_disponibles}
-            onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <label className="block font-medium mb-1" htmlFor="incluye">Incluye</label>
+          <label htmlFor="incluye" className="block mb-1 font-semibold">Incluye</label>
           <textarea
             id="incluye"
             name="incluye"
-            className="w-full border border-gray-300 rounded p-2"
             value={form.incluye}
             onChange={handleChange}
+            className="w-full rounded border border-gray-300 p-2"
           />
         </div>
 
         <div>
-          <label className="block font-medium mb-1" htmlFor="destinoRef">Destino *</label>
+          <label htmlFor="destinoRef" className="block mb-1 font-semibold">Destino *</label>
           <select
             id="destinoRef"
             name="destinoRef"
-            className="w-full border border-gray-300 rounded p-2"
             value={form.destinoRef}
             onChange={handleChange}
             required
+            className="w-full rounded border border-gray-300 p-2"
           >
             <option value="">-- Seleccione un destino --</option>
-            {destinos.map(d => (
-              <option key={d.id} value={d.id}>{d.nombre}</option>
+            {destinos.map(dest => (
+              <option key={dest.id} value={dest.id}>{dest.nombre}</option>
             ))}
           </select>
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Imagen</label>
+          <label className="block mb-1 font-semibold">Imagen</label>
           <input
             type="file"
             accept="image/*"
             onChange={handleImageChange}
+            className="mb-2"
           />
           {preview && (
             <img
@@ -233,9 +237,11 @@ export default function AddPaquetes() {
           )}
         </div>
 
-        <Button type="submit" disabled={loading} color="blue">
-          {loading ? 'Guardando...' : (id ? 'Actualizar Paquete' : 'Crear Paquete')}
-        </Button>
+        <div>
+          <Button type="submit" disabled={loading} color="blue">
+            {loading ? 'Guardando...' : id ? 'Actualizar Paquete' : 'Crear Paquete'}
+          </Button>
+        </div>
       </form>
     </section>
   );
