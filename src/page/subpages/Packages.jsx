@@ -45,7 +45,7 @@ export default function Tickets() {
   ];
 
   return (
-    <Layout>
+    <section>
       {/* International Section */}
       <section className="py-20 bg-white text-gray-800">
         <div className="container mx-auto px-4 text-center">
@@ -111,6 +111,6 @@ export default function Tickets() {
           </Link>
         </div>
       </section>
-    </Layout>
+    </section>
   );
 }

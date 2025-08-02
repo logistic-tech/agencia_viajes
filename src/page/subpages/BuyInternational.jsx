@@ -67,7 +67,7 @@ export default function BuyInternational() {
   const closeErrorModal = () => setIsErrorModalOpen(false);
 
   return (
-    <Layout>
+    <section>
       <div className="container mx-auto p-4">
         <ButtonIcon
           icon={<FaArrowLeft className="mr-2 h-5 w-5" />}
@@ -124,6 +124,6 @@ export default function BuyInternational() {
           <Button onClick={closeErrorModal}>Close</Button>
         </Modal.Footer>
       </Modal>
-    </Layout>
+    </section>
   );
 }

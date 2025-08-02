@@ -45,7 +45,7 @@ export default function PaymentOption() {
   };
 
   return (
-    <Layout>
+    <section>
       <div className="min-h-screen p-6 bg-white">
         <h1 className="text-3xl font-bold mb-6 text-center">Payment Options</h1>
 
@@ -152,6 +152,6 @@ export default function PaymentOption() {
           </button>
         </form>
       </div>
-    </Layout>
+    </section>
   );
 }

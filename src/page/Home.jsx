@@ -40,8 +40,7 @@ export default function Home() {
     { img: img12, title: t('home.tip4.title'), description: t('home.tip4.desc') }
   ];
   return (
-    <Layout>
-      {/* Hero Section */}
+  <section> 
       <section
         className="relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${img1})` }}
@@ -118,6 +117,6 @@ export default function Home() {
       <section className="px-4 md:px-8 lg:px-16 py-12 bg-white">
         <Fqs />
       </section>
-    </Layout>
+   </section>
   );
 }

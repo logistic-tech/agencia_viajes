@@ -1,4 +1,4 @@
-import React from 'react';
+
 import CardInfo from './CardInfo'; // Importa el componente CardInfo para mostrar información en tarjetas
 
 
@@ -16,7 +16,7 @@ export default function Layoutinfo({ data, title, description }) {
             img={item.img} // Imagen para la tarjeta
             title={item.title} // Título para la tarjeta
             description={item.description} // Descripción para la tarjeta
-          />
+          /> 
         ))}
       </section>
     </div>

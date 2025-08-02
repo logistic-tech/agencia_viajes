@@ -303,27 +303,27 @@ const [modalType, setModalType] = useState(null);
 
   if (loading)
     return (
-      <Layout>
+      <section>
         <p className="p-6 text-center text-gray-600 text-lg">Cargando...</p>
-      </Layout>
+      </section>
     );
   if (!user)
     return (
-      <Layout>
+      <section>
         <p className="p-6 text-center text-gray-600 text-lg">
           You must be logged in.
         </p>
-      </Layout>
+      </section>
     );
   if (error)
     return (
-      <Layout>
+      <section>
         <p className="p-6 text-center text-red-600 text-lg">{error}</p>
-      </Layout>
+      </section>
     );
 
   return (
-    <Layout>
+    <section>
       <div className="flex min-h-screen bg-gray-50">
         <aside className="w-64 bg-blue-900 text-white p-6 sticky top-0 h-screen overflow-auto shadow-lg">
           <h2 className="text-2xl font-bold mb-8 tracking-wide">Admin Panel</h2>
@@ -387,7 +387,7 @@ const [modalType, setModalType] = useState(null);
           {renderTable(getDataByTab())}
         </main>
       </div>
-    </Layout>
+    </section>
   );
 
   function getDataByTab() {

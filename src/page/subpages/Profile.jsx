@@ -90,7 +90,7 @@ export default function Profile() {
   };
 
   return (
-    <Layout>
+    <section>
       {/* Perfil */}
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6 text-gray-800">Mi Perfil</h1>
@@ -218,6 +218,6 @@ export default function Profile() {
           </table>
         </div>
       </div>
-    </Layout>
+    </section>
   );
 }

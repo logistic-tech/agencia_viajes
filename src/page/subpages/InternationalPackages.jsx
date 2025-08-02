@@ -24,7 +24,7 @@ export default function InternationalTickets() {
   };
 
   return (
-    <Layout>
+    <section>
       <div className="w-screen">
         {/* Carrusel de Tickets Internacionales */}
         <div className="relative w-full h-[70vh] mb-12">
@@ -72,6 +72,6 @@ export default function InternationalTickets() {
           ))}
         </div>
       </div>
-    </Layout>
+    </section>
   );
 }

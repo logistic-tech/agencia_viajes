@@ -5,7 +5,6 @@ import tourImage1 from '../../assets/paris.webp'; // Importa imágenes para los 
 import tourImage2 from '../../assets/colombia.webp';
 import tourImage3 from '../../assets/china.webp';
 import tourImage4 from '../../assets/brasil.webp';
-import Layout from '../layout/Layout'; // Importa el componente de diseño que envuelve la página
 import { ButtonIcon } from '../../components/ButtonIcon'; // Importa un componente personalizado para el botón con íconos
 import { FaArrowLeft } from "react-icons/fa"; // Importa el ícono de flecha hacia atrás
 
@@ -52,7 +51,7 @@ export default function TourDetails() {
     };
 
     return (
-        <Layout>
+        <section>
             <div className="container mx-auto p-4">
                 {/* Botón para volver a la página de tours */}
                 <ButtonIcon
@@ -128,6 +127,6 @@ export default function TourDetails() {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </section>
     );
 }
