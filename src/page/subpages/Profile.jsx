@@ -10,7 +10,6 @@ import {
   query,
   where
 } from "firebase/firestore";
-import Layout from "../layout/Layout";
 import { FaPen, FaSave, FaTimes } from "react-icons/fa";
 
 export default function Profile() {

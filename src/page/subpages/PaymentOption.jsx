@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import Layout from "../layout/Layout";
 
 export default function PaymentOption() {
   const { purchaseId } = useParams();

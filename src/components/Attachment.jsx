@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { FileInput, Label } from "flowbite-react";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { GrView } from "react-icons/gr";
 import IconPdf from "../assets/iconPdf.svg";
@@ -89,85 +88,85 @@ export function Attachment({
 
   return (
     <>
-      <div onDrop={handleDrop} onDragOver={handleDragOver}>
-        {label && <p className="text-base md:pb-3 pt-2">{labelText}</p>}
-        <Label
-          htmlFor={name}
-          className={`flex pt-2 h-48 md:h-72 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 ${
-            data ? "" : "border-dashed"
-          } ${
-            validation.isValid ? "border-red-600" : "border-gray-300"
-          } bg-white hover:bg-white dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600`}
-        >
-          <div className="flex flex-col items-center justify-center pb-2 pt-1">
-            {data ? (
-              <>
-                <img
-                  src={typeDocument === "pdf" ? IconPdf : IconWord}
-                  alt="document"
-                  className="w-10 h-10"
-                />
-                <p className="text-sm text-gray-700 dark:text-gray-300 pt-2 text-center max-w-96">
-                  {customFileName || data.name}{" "}
-                  {/* Mostrar el nombre personalizado */}
-                </p>
-                <div className="flex md:flex-col gap-3 py-3">
-                  <button
-                    onClick={ViewFiles}
-                    className="bg-[#1976d2] hover:bg-blue-500 text-white flex rounded justify-center items-center h-10 w-24"
-                  >
-                    {typeDocument === "pdf" ? "View" : "Download"}
-                    <GrView className="pl-1 w-5 h-5" />
-                  </button>
-                  <button
-                    disabled={disabled}
-                    onClick={deleteData}
-                    className={`${
-                      disableDelte ? "hidden" : ""
-                    } bg-red-600 hover:bg-red-500 text-white flex rounded justify-center items-center h-10 w-24`}
-                  >
-                    Delete <MdOutlineDeleteForever className="pl-1 w-6 h-5" />
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                <svg
-                  className="mb-4 h-8 w-8 text-gray-500 dark:text-gray-400"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 20 16"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-                  />
-                </svg>
-                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 px-1 text-center">
-                  <span className="font-semibold">Click to upload</span> or drag
-                  and drop
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                  DOC,DOCX,PDF (MAX. 5MB)
-                </p>
-              </>
-            )}
-            {validation.isValid && (
-              <p className="text-red-600">{validation.message}</p>
-            )}
-          </div>
-          <FileInput
-            id={name}
-            className="hidden"
-            accept=".doc,.docx,.pdf"
-            onChange={(e) => changeDocument(e.target.files[0])}
+     <div onDrop={handleDrop} onDragOver={handleDragOver}>
+  {label && <p className="text-base md:pb-3 pt-2">{labelText}</p>}
+  <label
+    htmlFor={name}
+    className={`flex pt-2 h-48 md:h-72 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 ${
+      data ? "" : "border-dashed"
+    } ${
+      validation.isValid ? "border-red-600" : "border-gray-300"
+    } bg-white hover:bg-white dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600`}
+  >
+    <div className="flex flex-col items-center justify-center pb-2 pt-1">
+      {data ? (
+        <>
+          <img
+            src={typeDocument === "pdf" ? IconPdf : IconWord}
+            alt="document"
+            className="w-10 h-10"
           />
-        </Label>
-      </div>
+          <p className="text-sm text-gray-700 dark:text-gray-300 pt-2 text-center max-w-96">
+            {customFileName || data.name}
+          </p>
+          <div className="flex md:flex-col gap-3 py-3">
+            <button
+              onClick={ViewFiles}
+              className="bg-[#1976d2] hover:bg-blue-500 text-white flex rounded justify-center items-center h-10 w-24"
+            >
+              {typeDocument === "pdf" ? "View" : "Download"}
+              <GrView className="pl-1 w-5 h-5" />
+            </button>
+            <button
+              disabled={disabled}
+              onClick={deleteData}
+              className={`${
+                disableDelte ? "hidden" : ""
+              } bg-red-600 hover:bg-red-500 text-white flex rounded justify-center items-center h-10 w-24`}
+            >
+              Delete <MdOutlineDeleteForever className="pl-1 w-6 h-5" />
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <svg
+            className="mb-4 h-8 w-8 text-gray-500 dark:text-gray-400"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 16"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+            />
+          </svg>
+          <p className="mb-2 text-sm text-gray-500 dark:text-gray-400 px-1 text-center">
+            <span className="font-semibold">Click to upload</span> or drag and drop
+          </p>
+          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+            DOC,DOCX,PDF (MAX. 5MB)
+          </p>
+        </>
+      )}
+      {validation.isValid && (
+        <p className="text-red-600">{validation.message}</p>
+      )}
+    </div>
+    <input
+      type="file"
+      id={name}
+      className="hidden"
+      accept=".doc,.docx,.pdf"
+      onChange={(e) => changeDocument(e.target.files[0])}
+    />
+  </label>
+</div>
+
 
       {showPdf && (
         <ViewAttach

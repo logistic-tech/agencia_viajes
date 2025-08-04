@@ -1,6 +1,4 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Layout from '../layout/Layout';
 import teamImage from '../../assets/team.webp';
 import servicesImage from '../../assets/services.webp';
 import destinationImage from '../../assets/destination.webp';

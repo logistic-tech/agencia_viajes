@@ -1,4 +1,4 @@
-import Layout from './layout/Layout';
+
 import Fqs from '../components/Fqs';
 import LayoutImg from '../components/LayoutImg';
 import Layoutinfo from '../components/Layoutinfo';

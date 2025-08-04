@@ -9,7 +9,6 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
-import Layout from "../layout/Layout";
 import {
   FiUsers,
   FiFileText,

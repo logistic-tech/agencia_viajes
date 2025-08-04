@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Button } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
 import { obtenerPaquetes } from '../../../services/services';
@@ -60,10 +59,14 @@ export default function Paquetes() {
                 <td className="px-4 py-3 text-gray-800">${paquete.precio}</td>
                 <td className="px-4 py-3 text-gray-800">{paquete.cupos_disponibles}</td>
                 <td className="px-4 py-3">
-                  <Button size="xs" color="light" onClick={() => onEditClick(paquete)}>
-                    Editar
-                  </Button>
-                </td>
+  <button
+    onClick={() => onEditClick(paquete)}
+    className="px-2 py-1 text-sm rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-100"
+  >
+    Editar
+  </button>
+</td>
+
               </tr>
             ))}
           </tbody>

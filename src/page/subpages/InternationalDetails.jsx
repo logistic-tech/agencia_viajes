@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import international1 from '../../assets/paris.webp';
 import international2 from '../../assets/Amsterdam.webp';
 import international3 from '../../assets/belgica.webp';
 import international4 from '../../assets/brasil.webp';
-import Layout from '../layout/Layout';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { FaArrowLeft } from "react-icons/fa";
 import { useAuth } from '../../firebase/auth'; 

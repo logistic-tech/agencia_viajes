@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../firebase/config";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuth } from "../../firebase/auth";
-import PurchaseForm from "./PurchaseForm"; // importa el componente
+import PurchaseForm from "./PurchaseForm";
 
 export default function BuyTours() {
   const { id } = useParams();

@@ -1,7 +1,5 @@
-import React from 'react'; // Importa React para construir el componente
-import Layout from '../layout/Layout'; // Importa el componente de diseño general para envolver la página
-import { Carousel } from 'flowbite-react'; // Importa el componente Carousel de Flowbite para mostrar un carrusel de imágenes
-import national1 from '../../assets/bocas.webp'; // Importa imágenes para los paquetes nacionales
+
+import national1 from '../../assets/bocas.webp';
 import national2 from '../../assets/sanblas.webp';
 import national3 from '../../assets/cascadaschorrillito.webp';
 import national4 from '../../assets/cangilonesGualaca.webp';
@@ -29,37 +27,33 @@ export default function NationalPackages() {
       {/* Contenedor para el carrusel de imágenes */}
       <div className="w-screen">
         {/* Contenedor del carrusel */}
-        <div className="relative w-full h-[70vh] mb-12">
-          <Carousel indicators={false} autoPlay={true} interval={5000}>
-            {/* Mapea sobre los paquetes nacionales para crear un slide para cada uno en el carrusel */}
-            {nationalPackages.map((packageItem) => (
-              <div key={packageItem.id} className="relative w-full h-full">
-                {/* Imagen del paquete en el carrusel */}
-                <img
-                  src={packageItem.image}
-                  alt={packageItem.title}
-                  className="w-full h-full object-cover rounded-2xl transform hover:scale-105 transition-transform duration-500"
-                />
-                {/* Contenedor de la superposición con detalles del paquete */}
-                <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent text-white p-6 rounded-b-2xl w-full">
-                  {/* Título del paquete */}
-                  <h3 className="text-3xl font-semibold">{packageItem.title}</h3>
-                  {/* Descripción del paquete */}
-                  <p className="text-lg mt-2">{packageItem.description}</p>
-                  {/* Precio del paquete */}
-                  <p className="text-xl font-bold mt-4">{packageItem.price}</p>
-                  {/* Botón para comprar el paquete */}
-                  <button
-                    className="mt-6 bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-600 transition-colors duration-300"
-                    onClick={() => handleBuyNow(packageItem.id)}
-                  >
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-            ))}
-          </Carousel>
+        <div className="relative w-full h-[70vh] mb-12 overflow-hidden rounded-2xl">
+      {nationalPackages.map((packageItem, index) => (
+        <div
+          key={packageItem.id}
+          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+          }`}
+        >
+          <img
+            src={packageItem.image}
+            alt={packageItem.title}
+            className="w-full h-full object-cover rounded-2xl transform hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute bottom-0 bg-gradient-to-t from-black to-transparent text-white p-6 rounded-b-2xl w-full">
+            <h3 className="text-3xl font-semibold">{packageItem.title}</h3>
+            <p className="text-lg mt-2">{packageItem.description}</p>
+            <p className="text-xl font-bold mt-4">{packageItem.price}</p>
+            <button
+              className="mt-6 bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-600 transition-colors duration-300"
+              onClick={() => handleBuyNow(packageItem.id)}
+            >
+              Buy Now
+            </button>
+          </div>
         </div>
+      ))}
+    </div>
 
         {/* Contenedor de tarjetas de paquetes nacionales */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">

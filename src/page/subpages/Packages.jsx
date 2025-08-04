@@ -1,6 +1,4 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Layout from '../layout/Layout';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/paris.webp';
 import img2 from '../../assets/china.webp';

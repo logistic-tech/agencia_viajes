@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Layout from '../layout/Layout';
 import national1 from '../../assets/bocas.webp';
 import national2 from '../../assets/sanblas.webp';
 import national3 from '../../assets/cascadaschorrillito.webp';
@@ -8,7 +7,6 @@ import national4 from '../../assets/cangilonesGualaca.webp';
 import { ButtonIcon } from '../../components/ButtonIcon';
 import { FaArrowLeft } from "react-icons/fa";
 import emailjs from 'emailjs-com';
-import { Button, Modal } from 'flowbite-react';
 import { useAuth } from '../../firebase/auth';
 import PurchaseForm from './PurchaseForm';
  
@@ -107,27 +105,60 @@ export default function BuyNational() {
         </div>
       </div>
 
-      {/* Modal de éxito */}
-      <Modal show={isSuccessModalOpen} onClose={closeSuccessModal} size="md" position="center">
-        <Modal.Header>Purchase Confirmation</Modal.Header>
-        <Modal.Body>
-          <p>Your purchase has been successfully processed!</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={closeSuccessModal}>Close</Button>
-        </Modal.Footer>
-      </Modal>
+    {/* Modal de éxito */}
+{isSuccessModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white w-full max-w-md rounded-xl shadow-lg overflow-hidden">
+      {/* Header */}
+      <div className="p-4 border-b font-semibold text-lg">
+        Purchase Confirmation
+      </div>
+      
+      {/* Body */}
+      <div className="p-4">
+        <p>Your purchase has been successfully processed!</p>
+      </div>
+      
+      {/* Footer */}
+      <div className="p-4 border-t flex justify-end">
+        <button
+          onClick={closeSuccessModal}
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
-      {/* Modal de error */}
-      <Modal show={isErrorModalOpen} onClose={closeErrorModal} size="md" position="center">
-        <Modal.Header>Error</Modal.Header>
-        <Modal.Body>
-          <p>Failed to send purchase details. Please try again.</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={closeErrorModal}>Close</Button>
-        </Modal.Footer>
-      </Modal>
+{/* Modal de error */}
+{isErrorModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white w-full max-w-md rounded-xl shadow-lg overflow-hidden">
+      {/* Header */}
+      <div className="p-4 border-b font-semibold text-lg text-red-600">
+        Error
+      </div>
+      
+      {/* Body */}
+      <div className="p-4">
+        <p>Failed to send purchase details. Please try again.</p>
+      </div>
+      
+      {/* Footer */}
+      <div className="p-4 border-t flex justify-end">
+        <button
+          onClick={closeErrorModal}
+          className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

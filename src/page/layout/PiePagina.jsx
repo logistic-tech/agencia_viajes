@@ -1,4 +1,3 @@
-import React from 'react'; // Importa la biblioteca React
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa'; // Importa iconos de redes sociales desde react-icons
 import logo from '/src/assets/blancologo.webp'; // Ruta del logo
 

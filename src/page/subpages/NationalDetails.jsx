@@ -1,11 +1,10 @@
-import React, { useState } from 'react'; // Importa React y el hook useState
+import { useState } from 'react'; // Importa React y el hook useState
 import { useAuth } from '../../firebase/auth'; // Importa el hook de autenticación para gestionar el estado del usuario
 import { useParams, useNavigate } from 'react-router-dom'; // Importa hooks para obtener parámetros de URL y para navegar programáticamente
 import national1 from '../../assets/bocas.webp'; // Importa imágenes para los paquetes nacionales
 import national2 from '../../assets/sanblas.webp';
 import national3 from '../../assets/cascadaschorrillito.webp';
 import national4 from '../../assets/cangilonesGualaca.webp';
-import Layout from '../layout/Layout'; // Importa el componente de diseño para la página
 import { ButtonIcon } from '../../components/ButtonIcon'; // Importa un componente personalizado para el botón
 import { FaArrowLeft } from "react-icons/fa"; // Importa el ícono de flecha hacia atrás
 

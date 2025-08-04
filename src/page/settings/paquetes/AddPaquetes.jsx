@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Button } from 'flowbite-react';
 import {
   crearPaquete,
   actualizarPaquete,
@@ -237,11 +236,18 @@ export default function AddPaquetes() {
           )}
         </div>
 
-        <div>
-          <Button type="submit" disabled={loading} color="blue">
-            {loading ? 'Guardando...' : id ? 'Actualizar Paquete' : 'Crear Paquete'}
-          </Button>
-        </div>
+       <div>
+  <button
+    type="submit"
+    disabled={loading}
+    className={`px-4 py-2 rounded text-white font-medium ${
+      loading ? 'bg-blue-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+    }`}
+  >
+    {loading ? 'Guardando...' : id ? 'Actualizar Paquete' : 'Crear Paquete'}
+  </button>
+</div>
+
       </form>
     </section>
   );

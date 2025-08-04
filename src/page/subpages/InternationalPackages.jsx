@@ -1,6 +1,4 @@
-import React from 'react'; // Importa React para usar JSX
-import Layout from '../layout/Layout'; // Importa el componente Layout para el diseño general
-import { Carousel } from 'flowbite-react'; // Importa el componente Carousel para mostrar las imágenes en un carrusel
+
 import international1 from '../../assets/paris.webp'; // Importa las imágenes de los tickets internacionales
 import international2 from '../../assets/Amsterdam.webp';
 import international3 from '../../assets/belgica.webp';
@@ -28,7 +26,7 @@ export default function InternationalTickets() {
       <div className="w-screen">
         {/* Carrusel de Tickets Internacionales */}
         <div className="relative w-full h-[70vh] mb-12">
-          <Carousel indicators={false} autoPlay={true} interval={5000}>
+         {/*  <Carousel indicators={false} autoPlay={true} interval={5000}>
             {internationalTickets.map((ticketItem) => (
               <div key={ticketItem.id} className="relative w-full h-full">
                 <img
@@ -49,7 +47,7 @@ export default function InternationalTickets() {
                 </div>
               </div>
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
 
         {/* Tarjetas de Tickets Internacionales */}
