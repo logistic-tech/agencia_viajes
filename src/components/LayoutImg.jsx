@@ -1,10 +1,9 @@
-import React from 'react'; // Importa la biblioteca de React para usar componentes.
 import CardImg from './CardImg'; // Importa el componente CardImg desde el archivo local './CardImg'.
 
 // Definición del componente LayoutImg
 export default function LayoutImg({ data, title }) {
   return (
-    <div className="justify-center p-4 items-center text-center">
+    <div className="justify-center p-4 items-center text-center text dark:text-gray-800">
       {/* Muestra el título solo si se proporciona */}
       {title && (
         <h2 className="text-xl font-bold mb-1 flex justify-center items-center">

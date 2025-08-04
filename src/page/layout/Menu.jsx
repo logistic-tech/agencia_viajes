@@ -54,8 +54,8 @@ export default function Menu() {
   };
 
   return (
-    <nav className="bg-blue-900 h-16 w-full shadow-lg">
-      <section className="max-w-7xl mx-auto flex items-center justify-between px-6">
+    <nav className="bg-blue-900 h-16 w-full shadow-lg text">
+      <section className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
         <img className="h-12 w-auto" src={logo} alt="Logo" />
 
         <section className="hidden md:flex space-x-8 text-white mx-auto">

@@ -42,20 +42,20 @@ export default function Home() {
   return (
   <section> 
       <section
-        className="relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
+        className=" relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: `url(${img1})` }}
       >
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="relative z-10 text-center text-white px-4 max-w-2xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 text-center text  px-4 max-w-2xl ">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
             {t('home.heroTitle')}
           </h1>
-          <p className="text-lg md:text-xl mb-6">
+          <p className="text-lg md:text-xl  mb-6 ">
             {t('home.heroSubtitle')}
           </p>
           <a
             href="/packages"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-md transition duration-300"
+            className="inline-block bg-orange-500  hover:bg-orange-600 font-semibold px-4 py-2 rounded-md transition duration-300"
           >
             {t('home.searchPackages')}
           </a>

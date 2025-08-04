@@ -5,7 +5,7 @@ import CardInfo from './CardInfo'; // Importa el componente CardInfo para mostra
 export default function Layoutinfo({ data, title, description }) {
   return (
     <div className="justify-center p-2 items-center text-center"> {/* Contenedor principal con alineación centrada */}
-      {title && <h2 className="text-xl font-bold mb-1 flex justify-center items-center">{title}</h2>} {/* Título opcional */}
+      {title && <h2 className="text-xl text-gray-800 font-bold mb-1 flex justify-center items-center">{title}</h2>} {/* Título opcional */}
       
       {/* Sección para mostrar las tarjetas en una cuadrícula */}
       <section className='grid h-full p-0 md:p-1 grid-cols-2 md:grid-cols-4 gap-1 md:gap-4 sm:h-80 xl:h-80 2xl:h-96'>

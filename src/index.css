@@ -1,2 +1,25 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fuente/Montserrat.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-great-blue-800: oklch(23.547% 0.06826 268.71);
+  --color-principal: #0b2e52;
+  --color-secundario: #ff7c1a;
+  --font-Montserrat: "Monserrat", sans-serif;
+}
+
+@layer components {
+  .text {
+    @apply font-Montserrat text-gray-800 dark:text-gray-100;
+  }
+
+}
