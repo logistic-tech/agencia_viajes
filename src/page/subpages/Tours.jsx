@@ -80,7 +80,7 @@ export default function Tours() {
             className="bg-white shadow-lg rounded-2xl overflow-hidden transform transition-transform duration-300 hover:shadow-2xl hover:scale-105"
           >
             <img
-              src={images[index]}
+              src={tour.imagen_url || images[index]}
               alt={`Imagen del tour ${tour.nombre}`}
               className="w-full h-64 object-cover"
             />

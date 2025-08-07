@@ -12,7 +12,7 @@ export default function Layout() {
       </header>
 
       {/* Contenido principal de la página */}
-      <main className="flex-grow overflow-y-auto">
+      <main className="flex-grow overflow-y-auto bg-white dark:bg-white" >
         <Outlet />
       </main>
 

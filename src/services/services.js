@@ -1,7 +1,34 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 
-export const subirImagen = async (file, uidPaquete) => {
+
+export async function subirImagen(file, id) {
+  console.log(file,id)
+  try {
+    const formData = new FormData();
+    formData.append('image', file);
+    formData.append('id', id); // ← Asegúrate de pasar `id`, no `uid`
+
+    const response = await fetch('http://localhost:3000/api/imagenes/upload', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error al subir imagen: ${response.statusText}`);
+    }
+
+    const data = await response.json(); // ← Aquí capturas la respuesta JSON del backend
+
+    return data.url; // ← Suponiendo que el backend devuelve `{ url: '...' }`
+  } catch (error) {
+    console.error('Error subiendo imagen:', error);
+    throw error;
+  }
+}
+
+
+/* export const subirImagen = async (file, uidPaquete) => {
   const formData = new FormData();
   formData.append('image', file);
   formData.append('folder', 'paquetes');
@@ -22,7 +49,7 @@ export const subirImagen = async (file, uidPaquete) => {
 
   const data = await response.json();
   return data.url; // URL pública de Firebase Storage
-};
+}; */
 
 export const obtenerDestinos = async () => {
   try {

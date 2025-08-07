@@ -28,9 +28,9 @@ export default function Paquetes() {
     <section className="p-6">
       <header className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold text-gray-800">Paquetes turísticos</h1>
-        <Button onClick={onAddClick} color="blue">
+        <button onClick={onAddClick}>
           <FaPlus className="mr-2" /> Agregar paquete
-        </Button>
+        </button>
       </header>
 
       <div className="overflow-x-auto rounded-lg border border-gray-100">
