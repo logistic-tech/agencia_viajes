@@ -32,7 +32,6 @@ export default function AddPaquetes() {
   useEffect(() => {
     const fetchDestinos = async () => {
       const data = await obtenerDestinos();
-      console.log(data);
       setDestinos(data);
     };
     fetchDestinos();
