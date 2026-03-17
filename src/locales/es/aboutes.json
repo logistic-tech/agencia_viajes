@@ -9,5 +9,29 @@
   "learnMore": "Aprende más",
   "exploreDestinations": "Explora nuestros destinos",
   "destinationsDescription": "Ya sea que busques una escapada a la playa, exploración cultural o un tour de aventura, tenemos el destino perfecto para ti.",
-  "startExploring": "Comienza a explorar"
+  "startExploring": "Comienza a explorar",
+  "packages": "Paquetes",
+  "packagesDesc": "Paquetes de viaje completos adaptados a tus necesidades.",
+  "tours": "Tours",
+  "toursDesc": "Explora destinos con experiencias guiadas.",
+  "visas": "Visas",
+  "visasDesc": "Te ayudamos con trámites y requisitos de visa.",
+
+  "aboutTitle": "Sobre Nosotros",
+  "aboutSlogan": "Seguridad y confianza en cada viaje.",
+
+  "companyName": "Tu Agencia de Viajes",
+
+  "aboutText1": "Somos una agencia especializada en facilitar experiencias de viaje internacionales, permitiéndote acceder a destinos, tours y servicios de forma sencilla, segura y confiable.",
+
+  "aboutText2": "Contamos con años de experiencia en el sector turístico, brindando atención personalizada y acompañamiento en cada etapa de tu viaje, desde la planificación hasta tu regreso.",
+
+  "aboutText3": "Nuestro compromiso es ofrecerte un servicio transparente, eficiente y adaptado a tus necesidades, garantizando calidad y satisfacción en cada experiencia.",
+
+  "mission": "Misión",
+  "missionDesc": "Facilitar a nuestros clientes el acceso a experiencias de viaje internacionales, brindando un servicio seguro, personalizado y confiable en cada etapa del proceso.",
+
+  "vision": "Visión",
+  "visionDesc": "Ser reconocidos como una agencia líder en turismo, destacándonos por la calidad de nuestro servicio, la confianza de nuestros clientes y la innovación en cada experiencia."
+
 }

@@ -21,5 +21,15 @@
       "price": "$899"
     }
   ],
-  "bookNow": "Reservar ahora"
-}
+  "bookNow": "Reservar ahora",
+ "experiencesTitle": "Tipos de Viaje",
+"experiencesSubtitle": "Explora diferentes formas de descubrir el mundo según tu estilo de aventura.",
+
+"expeditionsTitle": "Expediciones",
+"expeditionsDesc": "Viajes diseñados para explorar destinos únicos y vivir aventuras fuera de lo común.",
+
+"adventureTitle": "Aventura",
+"adventureDesc": "Experiencias llenas de adrenalina en montañas, selvas y paisajes extremos.",
+
+"culturalTitle": "Cultura",
+"culturalDesc": "Descubre la historia, tradiciones y esencia de cada destino alrededor del mundo."}

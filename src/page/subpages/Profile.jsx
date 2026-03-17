@@ -10,7 +10,7 @@ import {
   query,
   where
 } from "firebase/firestore";
-import { FaPen, FaSave, FaTimes } from "react-icons/fa";
+import { FaPen, FaSave, FaTimes, FaEnvelope, FaPhone, FaHome, FaBirthdayCake } from "react-icons/fa";
 
 export default function Profile() {
   const [user] = useAuthState(auth);
@@ -89,22 +89,33 @@ export default function Profile() {
   };
 
   return (
-    <section>
-      {/* Perfil */}
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6 text-gray-800">Mi Perfil</h1>
-        {user ? (
-          <div className="bg-white p-6 rounded-2xl shadow-xl max-w-xl mx-auto space-y-4">
+    <section className="bg-gray-50 min-h-screen py-8">
+      <div className="container mx-auto px-4 space-y-10">
+        {/* PERFIL */}
+        <div className="bg-white rounded-2xl shadow-xl p-6 max-w-3xl mx-auto">
+          <div className="flex items-center gap-6 mb-6">
+            <img
+  src={userData?.avatar || "https://i.pravatar.cc/150?img=3"} // Cambiado a dinámico
+  alt="Avatar"
+  className="w-24 h-24 rounded-full shadow-lg"
+/>
+            <div>
+              <h1 className="text-3xl font-bold text-gray-800">
+                {userData?.name} {userData?.lastName}
+              </h1>
+              <p className="text-gray-500">{userData?.email}</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
             {[
-              { label: "Correo electrónico", field: "email", type: "email" },
-              { label: "Nombre", field: "name", type: "text" },
-              { label: "Apellido", field: "lastName", type: "text" },
-              { label: "Teléfono", field: "phone", type: "tel" },
-              { label: "Dirección", field: "address", type: "text" },
-              { label: "Fecha de nacimiento", field: "birthDate", type: "date" }
-            ].map(({ label, field, type }) => (
-              <div key={field}>
-                <label className="block text-gray-700 font-semibold mb-1">{label}:</label>
+              { icon: <FaEnvelope />, label: "Correo electrónico", field: "email", type: "email" },
+              { icon: <FaPhone />, label: "Teléfono", field: "phone", type: "tel" },
+              { icon: <FaHome />, label: "Dirección", field: "address", type: "text" },
+              { icon: <FaBirthdayCake />, label: "Fecha de nacimiento", field: "birthDate", type: "date" }
+            ].map(({ icon, label, field, type }) => (
+              <div key={field} className="flex flex-col">
+                <span className="flex items-center gap-2 text-gray-700 font-semibold mb-1">{icon} {label}</span>
                 {editMode ? (
                   <input
                     type={type}
@@ -121,100 +132,72 @@ export default function Profile() {
                 )}
               </div>
             ))}
-
-            <div className="flex justify-end gap-3 mt-4">
-              {editMode ? (
-                <>
-                  <button
-                    onClick={handleSave}
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
-                  >
-                    <FaSave /> Guardar
-                  </button>
-                  <button
-                    onClick={handleCancel}
-                    className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
-                  >
-                    <FaTimes /> Cancelar
-                  </button>
-                </>
-              ) : (
-                <button
-                  onClick={() => setEditMode(true)}
-                  className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
-                >
-                  <FaPen /> Editar
-                </button>
-              )}
-            </div>
-
-            {error && <p className="text-red-500 mt-2 text-sm">{error}</p>}
-            {successMessage && <p className="text-green-600 mt-2 text-sm">{successMessage}</p>}
           </div>
-        ) : (
-          <p className="text-gray-600">No has iniciado sesión.</p>
-        )}
-      </div>
 
-      {/* Cotizaciones */}
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Mis Cotizaciones</h2>
-        <div className="overflow-x-auto rounded-lg shadow bg-white">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-blue-100">
-              <tr>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Paquete</th>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Precio</th>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Cantidad</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {quotations.length ? (
-                quotations.map(q => (
-                  <tr key={q.id}>
-                    <td className="px-6 py-3 text-gray-600">{q.package}</td>
-                    <td className="px-6 py-3 text-gray-600">${q.price}</td>
-                    <td className="px-6 py-3 text-gray-600">{q.quantity}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="3" className="text-center py-4 text-gray-500">No se encontraron cotizaciones.</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+          <div className="flex justify-end gap-3 mt-6">
+            {editMode ? (
+              <>
+                <button
+                  onClick={handleSave}
+                  className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
+                >
+                  <FaSave /> Guardar
+                </button>
+                <button
+                  onClick={handleCancel}
+                  className="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
+                >
+                  <FaTimes /> Cancelar
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => setEditMode(true)}
+                className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition"
+              >
+                <FaPen /> Editar
+              </button>
+            )}
+          </div>
+
+          {error && <p className="text-red-500 mt-3 text-sm">{error}</p>}
+          {successMessage && <p className="text-green-600 mt-3 text-sm">{successMessage}</p>}
         </div>
-      </div>
 
-      {/* Facturas */}
-      <div className="container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Mis Facturas</h2>
-        <div className="overflow-x-auto rounded-lg shadow bg-white">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-blue-100">
-              <tr>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Factura #</th>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Total</th>
-                <th className="px-6 py-3 text-left font-semibold text-gray-700">Cantidad</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {bills.length ? (
-                bills.map(b => (
-                  <tr key={b.id}>
-                    <td className="px-6 py-3 text-gray-600">{b.invoiceNumber || b.id}</td>
-                    <td className="px-6 py-3 text-gray-600">${b.total}</td>
-                    <td className="px-6 py-3 text-gray-600">{b.quantity}</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="3" className="text-center py-4 text-gray-500">No se encontraron facturas.</td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+        {/* COTIZACIONES */}
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">Mis Cotizaciones</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {quotations.length ? (
+              quotations.map(q => (
+                <div key={q.id} className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">{q.package}</h3>
+                  <p className="text-gray-600"><strong>Precio:</strong> ${q.price}</p>
+                  <p className="text-gray-600"><strong>Cantidad:</strong> {q.quantity}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-500">No se encontraron cotizaciones.</p>
+            )}
+          </div>
+        </div>
+
+        {/* FACTURAS */}
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">Mis Facturas</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {bills.length ? (
+              bills.map(b => (
+                <div key={b.id} className="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Factura #{b.invoiceNumber || b.id}</h3>
+                  <p className="text-gray-600"><strong>Total:</strong> ${b.total}</p>
+                  <p className="text-gray-600"><strong>Cantidad:</strong> {b.quantity}</p>
+                </div>
+              ))
+            ) : (
+              <p className="text-gray-500">No se encontraron facturas.</p>
+            )}
+          </div>
         </div>
       </div>
     </section>

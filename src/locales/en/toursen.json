@@ -21,5 +21,16 @@
       "price": "$899"
     }
   ],
-  "bookNow": "Book Now"
+  "bookNow": "Book Now",
+  "experiencesTitle": "Travel Styles",
+"experiencesSubtitle": "Explore different ways to discover the world based on your travel style.",
+
+"expeditionsTitle": "Expeditions",
+"expeditionsDesc": "Trips designed to explore unique destinations and live extraordinary adventures.",
+
+"adventureTitle": "Adventure",
+"adventureDesc": "High-adrenaline experiences in mountains, jungles, and extreme landscapes.",
+
+"culturalTitle": "Culture",
+"culturalDesc": "Discover the history, traditions, and essence of each destination."
 }

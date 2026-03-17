@@ -10,5 +10,30 @@
   "learnMore": "Learn More",
   "exploreDestinations": "Explore Our Destinations",
   "destinationsDescription": "Whether you're after a beach escape, cultural exploration, or an adventure tour, we have the perfect destination for you.",
-  "startExploring": "Start Exploring"
+  "startExploring": "Start Exploring",
+   "packages": "Packages",
+  "packagesDesc": "Complete travel packages tailored to your needs.",
+
+  "tours": "Tours",
+  "toursDesc": "Explore destinations with guided experiences.",
+
+  "visas": "Visas",
+  "visasDesc": "We assist you with visa processing and requirements.",
+    "aboutTitle": "About Us",
+  "aboutSlogan": "Security and trust in every journey.",
+
+  "companyName": "Your Travel Agency",
+
+  "aboutText1": "We are a travel agency specialized in facilitating international travel experiences, allowing you to access destinations, tours, and services in a simple, safe, and reliable way.",
+
+  "aboutText2": "We have years of experience in the tourism sector, providing personalized service and support at every stage of your journey, from planning to your return.",
+
+  "aboutText3": "Our commitment is to offer a transparent, efficient service tailored to your needs, ensuring quality and satisfaction in every experience.",
+
+  "mission": "Mission",
+  "missionDesc": "To provide our clients with access to international travel experiences through a safe, personalized, and reliable service at every stage.",
+
+  "vision": "Vision",
+  "visionDesc": "To be recognized as a leading travel agency, known for service quality, customer trust, and innovation in every experience."
+
 }

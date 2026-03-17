@@ -8,17 +8,17 @@ export function PiePagina() {
             <div className="max-w-7xl mx-auto px-6">
                 {/* Sección para el logo */}
                 <div className="flex justify-center mb-6">
-                    <img src={logo} alt="Logo" className="h-12 w-auto" />
+                    <img src={logo} alt="Logo" className="h-20 w-auto" />
                 </div>
 
                 {/* Sección de enlaces importantes */}
                 <div className="flex justify-center space-x-12 mb-6">
-                    <a href="https://panamamarinelogistic.com.pa" className="hover:text-blue-300 transition-colors">Home</a>
+                    <a href="https://https://ttlogistic.com.pa/" className="hover:text-blue-300 transition-colors">Home</a>
                     <a href="/aboutus" className="hover:text-blue-300 transition-colors">About Us</a>
                     <a href="/contactus" className="hover:text-blue-300 transition-colors">Contact</a>
-                    <a href="https://panamamarinelogistic.com.pa" className="hover:text-blue-300 transition-colors">Terms & Conditions</a>
+                    {/* <a href="https://panamamarinelogistic.com.pa" className="hover:text-blue-300 transition-colors">Terms & Conditions</a>
                     <a href="https://panamamarinelogistic.com.pa" className="hover:text-blue-300 transition-colors">Privacy Policy</a>
-                </div>
+                */} </div>
 
                 {/* Línea divisoria */}
                 <div className="border-t border-blue-300 my-6"></div>
@@ -41,7 +41,7 @@ export function PiePagina() {
 
                 {/* Información de derechos de autor */}
                 <div className="text-center text-sm text-gray-200">
-                    <p>&copy; 2024 Logistic Travels & Tours. All rights reserved.</p>
+                    <p>&copy; 2026 Logistic Travels & Tours. All rights reserved.</p>
                 </div>
             </div>
         </footer>

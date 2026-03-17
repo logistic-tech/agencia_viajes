@@ -56,7 +56,11 @@ export default function Menu() {
   return (
     <nav className="bg-blue-900 h-16 w-full shadow-lg text">
       <section className="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
-        <img className="h-12 w-auto" src={logo} alt="Logo" />
+      <img
+  className="h-16 w-40  object-contain"
+  src={logo}
+  alt="Logo"
+/>
 
         <section className="hidden md:flex space-x-8 text-white mx-auto">
           <Link to="/" className="hover:text-blue-200 transition duration-300 hover:scale-110">
